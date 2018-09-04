@@ -10,56 +10,41 @@ import React from "react";
 
 /* eslint-disable react/prefer-stateless-function */
 class RestaurantListItem extends React.Component {
-  constructor() {
-    super()
-  this.state = {
-    showDetails: false,
-    button: "Visa mer"
+  constructor(props){
+    super(props)
+
+    this.state = {
+      showDetails: false,
+      button : 'show more'
+		}
   }
-}
- 
-  showMore = (i) => { 
-   this.setState({
-      showDetails: !this.state.showDetails,
-      button: "Visa mindre"
+
+  showMore = (i) => {
+    this.setState({
+      showDetails : !this.state.showDetails,
     })
   }
 
-  showLess = (i) => { 
-    this.setState({
-       showDetails: !this.state.showDetails,
-       button: "Visa mer"
-     })
-   }
-
-
-
   renderRestaurant = () => {
     return (
-      <div>
-        <div onClick={this.showMore}>
-            <h2>{this.props.restaurant.name}</h2>
-            {this.state.button}
-        </div>
-    </div>
+      <li onClick={this.showMore}>{this.props.restaurant.name}
+      </li>
     )
   }
 
   renderRestaurantDetails = () => {
     return (
       <div>
-        <div onClick={this.showLess}>
-            <h1>Detaljer</h1>
-            <p>{this.props.restaurant.name}</p>
-          {this.state.button}
-      </div>
+        <li onClick={this.showMore}>{this.props.restaurant.name}
+      </li>
+      <h1>details</h1>
+      <p>{this.props.restaurant.name}</p>
+      <p>{this.props.restaurant.address}</p>
       </div>
     )
   }
-    
-
   render() {
-    return this.state.showDetails ? this.renderRestaurantDetails() : this.renderRestaurant();
+    return this.state.showDetails ? this.renderRestaurantDetails() : this.renderRestaurant()
   }
 }
 

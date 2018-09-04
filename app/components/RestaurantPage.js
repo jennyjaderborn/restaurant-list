@@ -11,22 +11,18 @@ import RestaurantList from './RestaurantList';
 
 /* eslint-disable react/prefer-stateless-function */
 
-const restaurants =[
-  {
-    id: 0,
-    name: 'Köket'
-  },
-  {
-    id: 1,
-    name: 'Kooperativet'
-  },
-  {
-    id: 2,
-    name: 'Lasse på heden'
-  }
-] 
+let restaurants = [
+            { 
+              name: 'Bellini',
+              address: 'Linnegatan 20'
+            },
+            { name: 'Un Poco',
+            address: 'Vasagatan 4'
+            }
+          ];
 
 class RestaurantPage extends React.Component {
+   
   render() {
     return (
     <div>

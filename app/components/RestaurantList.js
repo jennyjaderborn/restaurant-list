@@ -10,29 +10,26 @@ import RestaurantListItem from './RestaurantListItem';
 // import styled from 'styled-components';
 
 /* eslint-disable react/prefer-stateless-function */
-class RestaurantList extends React.Component {
- 
-  
-  render(){
+class RestaurantList extends React.Component {  
 
+  render() {
+    console.log(this.props.restaurants)
+    
     const data = this.props.restaurants;
 
-      const restaurantList = data.map((restaurant, i) =>
-
-          <RestaurantListItem key={i} restaurant={restaurant} />
-        
-      )
-      console.log(restaurantList)
+    const listItems = data.map((restaurant,i) => 
+      <RestaurantListItem restaurant={restaurant}
+                          key={i}/>
+    )
+console.log(listItems)
       return (
-        <div>
-           <ul>{restaurantList}</ul>
-        </div>
+        <ul>
+       {listItems}
+        </ul>
       )
+    }
+  }
 
-    
-     }
-
-}
 
 /*RestaurantList.propTypes = {};*/
 
