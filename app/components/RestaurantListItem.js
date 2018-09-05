@@ -52,7 +52,7 @@ class RestaurantListItem extends React.Component {
         </div>
 
         <Modal open={open} onClose={this.onCloseModal}>
-                <img src={img} />
+                <img className="modalImg" src={img} />
                 <h1>{name}</h1>
                 <p>{address}</p>
         </Modal>
