@@ -23,7 +23,7 @@
 
 .restaurantListWrap{
    
-    width: 100%; 
+    max-width: 85%; 
     justify-content: center;
     height: auto;
     flex-direction: column;
@@ -34,5 +34,16 @@
 }
 
 .modalImg {
-    width: 500px;
+    width: 90%;
+    margin:auto;
+}
+
+.styles_modal__gNwvD{
+    font-family: 'Ubuntu', sans-serif;
+    width: 80%;
+    height: 100% auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
 }
