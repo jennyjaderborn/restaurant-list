@@ -45,11 +45,18 @@ class RestaurantListItem extends React.Component {
     const { img, name, address } = this.props.restaurant;
 
     return (
+      <React.Fragment>
+        <div className="restaurantCard" onClick={this.onOpenModal}>
+          <h2>{name}</h2>
+          <img className="listProductImg" src={img}/>
+        </div>
+
         <Modal open={open} onClose={this.onCloseModal}>
                 <img src={img} />
                 <h1>{name}</h1>
                 <p>{address}</p>
         </Modal>
+        </React.Fragment>
     )
   }
 
