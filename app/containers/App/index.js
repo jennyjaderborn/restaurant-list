@@ -13,7 +13,6 @@
 
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import { Modal } from 'react-responsive-modal';
 
 import RestaurantPage from 'components/RestaurantPage';
 

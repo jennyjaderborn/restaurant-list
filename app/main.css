@@ -1,0 +1,23 @@
+.listProductImg{
+    width: 370px;
+    height: 250px;
+
+}
+
+.restaurantCard{
+    
+}
+
+.restaurantPage{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 100%;
+}
+
+.restaurantWrap{
+   
+    width: 100%; 
+    justify-content: center;
+    height: auto;
+}

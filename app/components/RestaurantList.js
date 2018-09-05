@@ -3,7 +3,6 @@
  * RestaurantList
  *
  */
-
 import React from "react";
 import RestaurantListItem from './RestaurantListItem';
 // import PropTypes from 'prop-types';
@@ -19,13 +18,13 @@ class RestaurantList extends React.Component {
 
     const listItems = data.map((restaurant,i) => 
       <RestaurantListItem restaurant={restaurant}
-                          key={i}/>
+      key={i}/>
     )
 console.log(listItems)
       return (
-        <ul>
-       {listItems}
-        </ul>
+       <div className="restaurantWrap">
+          {listItems}
+        </div>
       )
     }
   }

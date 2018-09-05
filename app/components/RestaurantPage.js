@@ -3,7 +3,6 @@
  * RestaurantPage
  *
  */
-
 import React from "react";
 import RestaurantList from './RestaurantList';
 // import PropTypes from 'prop-types';
@@ -12,20 +11,34 @@ import RestaurantList from './RestaurantList';
 /* eslint-disable react/prefer-stateless-function */
 
 let restaurants = [
-            { 
-              name: 'Bellini',
-              address: 'Linnegatan 20'
-            },
-            { name: 'Un Poco',
-            address: 'Vasagatan 4'
-            }
-          ];
+
+      { 
+        name: 'Bellini',
+        address: 'Linnegatan 20',
+        img: require('images/images.jpg')
+      },
+      { 
+        name: 'Un Poco',
+        address: 'Vasagatan 4',
+        img: require('images/unpoco.jpg')
+      },
+      { 
+        name: 'Un Poco',
+        address: 'Vasagatan 4',
+        img: require('images/unpoco.jpg')
+      },
+      { 
+        name: 'Un Poco',
+        address: 'Vasagatan 4',
+        img: require('images/unpoco.jpg')
+      }
+];
 
 class RestaurantPage extends React.Component {
    
   render() {
     return (
-    <div>
+    <div className="restaurantPage">
     <h1>Restauranger</h1>
     <RestaurantList restaurants={restaurants}/>
     </div>
