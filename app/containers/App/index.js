@@ -13,7 +13,7 @@
 
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-
+import HomePage from 'components/HomePage';
 import RestaurantPage from 'components/RestaurantPage';
 import NavBar from 'components/NavBar';
 import { BrowserRouter as Router, Link, NavLink, Redirect, Prompt } from 'react-router-dom';
@@ -28,7 +28,7 @@ export default function App() {
    
       <Route path="/" exact strict render={
         ()=> {
-          return (<h1>This is sdshomePage</h1>);
+          return (<HomePage/>);
         }
       }/>
 
