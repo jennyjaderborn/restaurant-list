@@ -6,6 +6,7 @@
 import React from "react";
 import Modal from 'react-responsive-modal';
 import PropTypes from 'prop-types';
+// import styled from 'styled-components';
 
 class RestaurantListItem extends React.Component {
   constructor(props){
@@ -16,10 +17,11 @@ class RestaurantListItem extends React.Component {
 		}
   }
 
+  
 
-  onOpenModal = () => {
+  onOpenModal = (i) => {
     this.setState({
-      open: true
+      open:true
     })
   }
 
@@ -32,22 +34,20 @@ class RestaurantListItem extends React.Component {
   renderRestaurant = () => {
     return (
       <div className="restaurantCard" onClick={this.onOpenModal}>
-          <h2>{this.props.restaurant.name}</h2>
-          <img className="listProductImg" src={this.props.restaurant.img}/>
+      <h2>{this.props.restaurant.name}</h2>
+      <img className="listProductImg" src={this.props.restaurant.img}/>
       </div>
     )
   }
   renderRestaurantDetails = () => {
 
     const {open} = this.state;
-    const { img, name, address } = this.props.restaurant;
-
     return (
         <Modal open={open} onClose={this.onCloseModal}>
             <div onClick={this.showMore}>
-                <img src={img} />
-                <h1>{name}</h1>
-                <p>{address}</p>
+            <img src={this.props.restaurant.img} />
+                <h1>{this.props.restaurant.name}</h1>
+                <p>{this.props.restaurant.address}</p>
             </div>
         </Modal>
     )
