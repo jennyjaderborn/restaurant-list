@@ -30,6 +30,26 @@ let restaurants = [
         name: 'Un Poco',
         address: 'Vasagatan 4',
         img: require('images/unpoco.jpg')
+      },
+      { 
+        name: 'Un Poco',
+        address: 'Vasagatan 4',
+        img: require('images/unpoco.jpg')
+      },
+      { 
+        name: 'Un Poco',
+        address: 'Vasagatan 4',
+        img: require('images/unpoco.jpg')
+      },
+      { 
+        name: 'Un Poco',
+        address: 'Vasagatan 4',
+        img: require('images/unpoco.jpg')
+      },
+      { 
+        name: 'Un Poco',
+        address: 'Vasagatan 4',
+        img: require('images/unpoco.jpg')
       }
 ];
 
@@ -39,7 +59,7 @@ class RestaurantPage extends React.Component {
 
     return (
       <div className="restaurantPage">
-        <h1>Restaurants</h1>
+        <h1>Restauranger</h1>
         <RestaurantList restaurants={restaurants}/>
       </div>
     );
