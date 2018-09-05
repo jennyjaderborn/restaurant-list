@@ -36,3 +36,8 @@
 .modalImg {
     width: 500px;
 }
+
+#app {
+    background-color: #ffffff;
+    font-family: 'Ubuntu', sans-serif;    
+}
