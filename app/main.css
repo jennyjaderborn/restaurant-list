@@ -47,3 +47,26 @@
     flex-direction: column;
 
 }
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+}
+
+.navItem {
+    color: black;
+    margin: 2%;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.selected {
+    color: gray;
+    text-decoration: underline;
+}
+
+#app {
+    background-color: #ffffff;
+}
