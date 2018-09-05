@@ -6,6 +6,7 @@
 
 .restaurantCard{
     margin: 0% 2%;
+    font-family: 'Ubuntu', sans-serif;
 }
 
 .restaurantPage{
@@ -16,6 +17,8 @@
     max-width: 100%;
     height: 100vh;
     background-color: rgb(255, 255, 255);
+    font-family: 'Ubuntu', sans-serif;
+    color: rgb(49, 44, 44);
 }
 
 .restaurantListWrap{
@@ -27,8 +30,9 @@
     align-items: center;
     display: flex;
     flex-flow: row wrap;
+    font-family: 'Ubuntu', sans-serif;
 }
 
 .modalImg {
-    max-width: 500px;
+    width: 500px;
 }
