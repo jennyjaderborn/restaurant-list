@@ -46,11 +46,9 @@ class RestaurantListItem extends React.Component {
 
     return (
         <Modal open={open} onClose={this.onCloseModal}>
-            <div onClick={this.showMore}>
                 <img src={img} />
                 <h1>{name}</h1>
                 <p>{address}</p>
-            </div>
         </Modal>
     )
   }
