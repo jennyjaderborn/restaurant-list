@@ -5,7 +5,7 @@
  */
 import React from "react";
 import RestaurantListItem from './RestaurantListItem';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 // import styled from 'styled-components';
 
 /* eslint-disable react/prefer-stateless-function */
@@ -30,6 +30,9 @@ console.log(listItems)
   }
 
 
-/*RestaurantList.propTypes = {};*/
+RestaurantList.propTypes = {
+
+  restaurants: PropTypes.array.isRequired
+};
 
 export default RestaurantList;

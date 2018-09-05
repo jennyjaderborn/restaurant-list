@@ -5,7 +5,7 @@
  */
 import React from "react";
 import Modal from 'react-responsive-modal';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 // import styled from 'styled-components';
 
 class RestaurantListItem extends React.Component {
@@ -13,17 +13,14 @@ class RestaurantListItem extends React.Component {
     super(props)
 
     this.state = {
-      /*showDetails: false,*/
-      button: 'show more',
       open: false
 		}
   }
 
   
 
-  showMore = (i) => {
+  onOpenModal = (i) => {
     this.setState({
-     /* showDetails : !this.state.showDetails,*/
       open:true
     })
   }
@@ -36,7 +33,7 @@ class RestaurantListItem extends React.Component {
 
   renderRestaurant = () => {
     return (
-      <div className="restaurantCard" onClick={this.showMore}>
+      <div className="restaurantCard" onClick={this.onOpenModal}>
       <h2>{this.props.restaurant.name}</h2>
       <img className="listProductImg" src={this.props.restaurant.img}/>
       </div>
@@ -63,7 +60,11 @@ class RestaurantListItem extends React.Component {
 
 
 RestaurantListItem.propTypes = {
-  
+  restaurant: PropTypes.shape({
+    name: PropTypes.string,
+    address: PropTypes.string,
+    img: PropTypes.string
+  })
 };
 
 export default RestaurantListItem;

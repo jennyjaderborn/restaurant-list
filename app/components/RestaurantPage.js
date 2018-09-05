@@ -5,7 +5,7 @@
  */
 import React from "react";
 import RestaurantList from './RestaurantList';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 // import styled from 'styled-components';
 
 /* eslint-disable react/prefer-stateless-function */
@@ -46,6 +46,7 @@ class RestaurantPage extends React.Component {
   }
 }
 
-RestaurantPage.propTypes = {};
+RestaurantPage.propTypes = {
+};
 
 export default RestaurantPage;
