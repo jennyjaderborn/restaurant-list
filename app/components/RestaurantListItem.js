@@ -16,14 +16,10 @@ class RestaurantListItem extends React.Component {
       open: false
 		}
   }
-<<<<<<< HEAD
 
   
 
   onOpenModal = (i) => {
-=======
-  showMore = (i) => {
->>>>>>> 4db61dda0a3f02dbe0c5b5ca3d66288729af78cc
     this.setState({
       open:true
     })
@@ -64,18 +60,10 @@ class RestaurantListItem extends React.Component {
 
 RestaurantListItem.propTypes = {
   restaurant: PropTypes.shape({
-<<<<<<< HEAD
     name: PropTypes.string,
     address: PropTypes.string,
     img: PropTypes.string
   })
-=======
-  img: PropTypes.string,
-  name: PropTypes.string,
-  adress: PropTypes.string
-  })
-
->>>>>>> 4db61dda0a3f02dbe0c5b5ca3d66288729af78cc
 };
 
 export default RestaurantListItem;
