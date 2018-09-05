@@ -30,10 +30,12 @@ class RestaurantListItem extends React.Component {
   }
 
   renderRestaurant = () => {
+    const { name, img } = this.props.restaurant;
+
     return (
       <div className="restaurantCard" onClick={this.onOpenModal}>
-          <h2>{this.props.restaurant.name}</h2>
-          <img className="listProductImg" src={this.props.restaurant.img}/>
+          <h2>{name}</h2>
+          <img className="listProductImg" src={img}/>
       </div>
     )
   }
