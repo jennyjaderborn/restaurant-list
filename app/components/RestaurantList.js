@@ -31,8 +31,16 @@ console.log(listItems)
 
 
 RestaurantList.propTypes = {
+<<<<<<< HEAD
 
   restaurants: PropTypes.array.isRequired
 };
 
+=======
+  /*listItems: PropTypes.string.isRequired,*/
+  restaurants: PropTypes.array.isRequired
+  
+};
+console.log(PropTypes)
+>>>>>>> 4db61dda0a3f02dbe0c5b5ca3d66288729af78cc
 export default RestaurantList;
