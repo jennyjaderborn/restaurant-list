@@ -16,10 +16,31 @@ import { Switch, Route } from 'react-router-dom';
 
 import RestaurantPage from 'components/RestaurantPage';
 
+import { BrowserRouter as Router, Link, NavLink, Redirect, Prompt } from 'react-router-dom';
+
 export default function App() {
   return (
+
+
+    <Router>    
     <div>
-    <RestaurantPage/>
-    </div>
+      <NavLink activeClassName="selected" to="/" exact>Home</NavLink>
+   
+      <NavLink activeClassName="selected" to="/restauranger" exact>restauranger</NavLink>         
+   
+      <Route path="/" exact strict render={
+        ()=> {
+          return (<h1>This is homePage</h1>);
+        }
+      }/>
+
+      <Route path="/restauranger" exact strict render={
+        ()=> {
+          return (<RestaurantPage/>);
+        }
+      }/>
+      </div>
+  </Router>
+    
   );
 }
