@@ -6,6 +6,9 @@
 import React from "react";
 import Modal from 'react-responsive-modal';
 import PropTypes from 'prop-types';
+import Save from './Save';
+
+const minArray = [];
 
 class RestaurantListItem extends React.Component {
 
@@ -13,8 +16,21 @@ class RestaurantListItem extends React.Component {
     super(props)
 
   this.state = {
-    open: false
+    open: false,
+    saved: false,
   }
+
+  this.saveRestaurant = (props) => {
+    alert('spara')
+    //console.log('PROPS:', this.props.restaurant)
+    this.setState( state => ({
+      saved: !state.saved,
+    }))
+    minArray.push(this.props.restaurant);
+    console.log('arrayen::::',minArray);
+  }
+  
+
 }
 
 
@@ -30,6 +46,24 @@ onCloseModal = () => {
   })
 }
 
+
+
+componentWillMount(minArray) {
+  localStorage.getItem("sparadarray");
+//alert(localStorage.getItem("sparadarray"));
+  /*localStorage.getItem('save') && this.setState({
+    saved: JSON.parse(localStorage.getItem('save')),
+    isLoading: false
+  })*/
+}
+
+componentWillUpdate(minArray) {
+  localStorage.setItem("sparadarray", minArray);
+  //localStorage.setItem('save', JSON.stringify(nextState.saved))
+}
+
+
+
   renderRestaurant = () => {
     const { name, img } = this.props.restaurant;    
 
@@ -44,7 +78,7 @@ onCloseModal = () => {
 
 
   renderRestaurantDetails = () => {
-
+console.log(this.props)
     const { img, name, address } = this.props.restaurant;
     const { open } = this.state;
     return (
@@ -58,6 +92,9 @@ onCloseModal = () => {
                 <img className="modalImage" src={img} />
                 <h1>{name}</h1>
                 <p>{address}</p>
+                <Save
+                    save={this.saveRestaurant}
+                />
         </Modal>
         </React.Fragment>
     )
