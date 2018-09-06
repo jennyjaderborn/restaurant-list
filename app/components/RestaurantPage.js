@@ -47,7 +47,7 @@ let restaurants = [
         img: require('images/unpoco.jpg')
       },
       { 
-        name: 'Un Poco',
+        name: 'Un Pocosist',
         address: 'Vasagatan 4',
         img: require('images/unpoco.jpg')
       }

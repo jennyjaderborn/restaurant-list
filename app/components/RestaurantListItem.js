@@ -8,48 +8,55 @@ import Modal from 'react-responsive-modal';
 import PropTypes from 'prop-types';
 
 class RestaurantListItem extends React.Component {
- 
 
-  renderRestaurant = (props) => {
-    const { name, img } = this.props.restaurant;
-    
-    const { onOpen } = this.props;
-    
+  constructor(props){
+    super(props)
+
+  this.state = {
+    open: false
+  }
+}
+
+
+onOpenModal = () => {
+  this.setState({
+    open: true
+  })
+}
+
+onCloseModal = () => {
+  this.setState({
+    open: false
+  })
+}
+
+  renderRestaurant = () => {
+    const { name, img } = this.props.restaurant;    
 
     return (
-      <div className="restaurantCard" onClick={onOpen}>
+      <div className="restaurantCard" onClick={this.onOpenModal}>
           <h2>{name}</h2>
           <img className="listImage" src={img}/>
+          
       </div>
     )
   }
 
 
-  renderRestaurantDetails = (props) => {
+  renderRestaurantDetails = () => {
 
     const { img, name, address } = this.props.restaurant;
-    const { open, onClose, onOpen } = this.props;
+    const { open } = this.state;
     return (
       <React.Fragment>
-<<<<<<< HEAD
         <div className="restaurantCard" onClick={this.onOpenModal}>
-          <h4 className="restaurantName">{name}</h4>
-          <img className="listProductImg" src={img}/>
-        </div>
-
-        <Modal open={open} onClose={this.onCloseModal}>
-                <img className="modalImg" src={img} />
-                <h3 className="restaurantName">{name}</h3>
-=======
-        <div className="restaurantCard" onClick={onOpen}>
           <h2>{name}</h2>
           <img className="listImage" src={img}/>
         </div>
 
-        <Modal open={open} onClose={onClose}>
+        <Modal open={open} onClose={this.onCloseModal}>
                 <img className="modalImage" src={img} />
                 <h1>{name}</h1>
->>>>>>> e35d772d81f61ed6397cc35a20832d54a9397772
                 <p>{address}</p>
         </Modal>
         </React.Fragment>
@@ -57,7 +64,7 @@ class RestaurantListItem extends React.Component {
   }
 
   render() {
-    return this.props.open ? this.renderRestaurantDetails() : this.renderRestaurant()
+    return this.state.open ? this.renderRestaurantDetails() : this.renderRestaurant()
   }
 }
 
@@ -65,11 +72,8 @@ RestaurantListItem.propTypes = {
   restaurant: PropTypes.shape({
     name: PropTypes.string,
     address: PropTypes.string,
-    img: PropTypes.string
+    img: PropTypes.string,
   }),
-  onOpen: PropTypes.func.isRequired,
-  onClose: PropTypes.func.isRequired,  
-  open: PropTypes.bool.isRequired
 };
 
 export default RestaurantListItem;
