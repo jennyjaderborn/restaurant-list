@@ -1,4 +1,4 @@
-.listProductImg{
+.listImage {
     width: 370px;
     height: 250px;
     box-shadow: 4px 6px 12px #e4e1e1;
@@ -36,7 +36,7 @@
     font-family: 'Ubuntu', sans-serif;
 }
 
-.modalImg {
+.modalImage {
     width: 90%;
     margin:auto;
 }
