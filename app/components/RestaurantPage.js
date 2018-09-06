@@ -59,7 +59,7 @@ class RestaurantPage extends React.Component {
 
     return (
       <div className="restaurantPage">
-        <h1>Restauranger</h1>
+        <h2>Restauranger</h2>
         <RestaurantList restaurants={restaurants}/>
       </div>
     );

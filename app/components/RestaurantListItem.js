@@ -47,13 +47,13 @@ class RestaurantListItem extends React.Component {
     return (
       <React.Fragment>
         <div className="restaurantCard" onClick={this.onOpenModal}>
-          <h2>{name}</h2>
+          <h4 className="restaurantName">{name}</h4>
           <img className="listProductImg" src={img}/>
         </div>
 
         <Modal open={open} onClose={this.onCloseModal}>
                 <img className="modalImg" src={img} />
-                <h1>{name}</h1>
+                <h3 className="restaurantName">{name}</h3>
                 <p>{address}</p>
         </Modal>
         </React.Fragment>
