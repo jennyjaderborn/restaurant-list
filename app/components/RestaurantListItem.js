@@ -8,51 +8,36 @@ import Modal from 'react-responsive-modal';
 import PropTypes from 'prop-types';
 
 class RestaurantListItem extends React.Component {
-  constructor(props){
-    super(props)
+ 
 
-    this.state = {
-      open: false
-		}
-  }
-
-
-  onOpenModal = () => {
-    this.setState({
-      open: true
-    })
-  }
-
-  onCloseModal = () => {
-    this.setState({
-      open: false
-    })
-  }
-
-  renderRestaurant = () => {
+  renderRestaurant = (props) => {
     const { name, img } = this.props.restaurant;
+    
+    const { onOpen } = this.props;
+    
 
     return (
-      <div className="restaurantCard" onClick={this.onOpenModal}>
+      <div className="restaurantCard" onClick={onOpen}>
           <h2>{name}</h2>
-          <img className="listProductImg" src={img}/>
+          <img className="listImage" src={img}/>
       </div>
     )
   }
-  renderRestaurantDetails = () => {
 
-    const {open} = this.state;
+
+  renderRestaurantDetails = (props) => {
+
     const { img, name, address } = this.props.restaurant;
-
+    const { open, onClose, onOpen } = this.props;
     return (
       <React.Fragment>
-        <div className="restaurantCard" onClick={this.onOpenModal}>
+        <div className="restaurantCard" onClick={onOpen}>
           <h2>{name}</h2>
-          <img className="listProductImg" src={img}/>
+          <img className="listImage" src={img}/>
         </div>
 
-        <Modal open={open} onClose={this.onCloseModal}>
-                <img className="modalImg" src={img} />
+        <Modal open={open} onClose={onClose}>
+                <img className="modalImage" src={img} />
                 <h1>{name}</h1>
                 <p>{address}</p>
         </Modal>
@@ -61,7 +46,7 @@ class RestaurantListItem extends React.Component {
   }
 
   render() {
-    return this.state.open ? this.renderRestaurantDetails() : this.renderRestaurant()
+    return this.props.open ? this.renderRestaurantDetails() : this.renderRestaurant()
   }
 }
 
@@ -70,7 +55,10 @@ RestaurantListItem.propTypes = {
     name: PropTypes.string,
     address: PropTypes.string,
     img: PropTypes.string
-  })
+  }),
+  onOpen: PropTypes.func.isRequired,
+  onClose: PropTypes.func.isRequired,  
+  open: PropTypes.bool.isRequired
 };
 
 export default RestaurantListItem;

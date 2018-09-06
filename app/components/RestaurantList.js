@@ -11,6 +11,23 @@ import PropTypes from 'prop-types';
 
 class RestaurantList extends React.Component {  
 
+  state = {
+    open: false
+  }
+
+  onOpenModal = () => {
+    this.setState({
+      open: true
+    })
+  }
+
+  onCloseModal = () => {
+    this.setState({
+      open: false
+    })
+  }
+
+
   render() {
     
     const data = this.props.restaurants;
@@ -21,6 +38,9 @@ class RestaurantList extends React.Component {
       <RestaurantListItem 
                     restaurant={restaurant}
                     key={i}
+                    onOpen={this.onOpenModal.bind(this)}
+                    onClose={this.onCloseModal.bind(this)}
+                    open={this.state.open}
       />)
 
       return (
