@@ -10,6 +10,7 @@
 .restaurantCard{
     margin: 0% 2%;
     font-family: 'Ubuntu', sans-serif;
+    cursor: pointer;
 }
 
 .restaurantPage{
