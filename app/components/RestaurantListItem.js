@@ -6,6 +6,8 @@
 import React from "react";
 import Modal from 'react-responsive-modal';
 import PropTypes from 'prop-types';
+import SaveRestaurant from "./save";
+
 
 class RestaurantListItem extends React.Component {
  
@@ -31,16 +33,6 @@ class RestaurantListItem extends React.Component {
     const { open, onClose, onOpen } = this.props;
     return (
       <React.Fragment>
-<<<<<<< HEAD
-        <div className="restaurantCard" onClick={this.onOpenModal}>
-          <h4 className="restaurantName">{name}</h4>
-          <img className="listProductImg" src={img}/>
-        </div>
-
-        <Modal open={open} onClose={this.onCloseModal}>
-                <img className="modalImg" src={img} />
-                <h3 className="restaurantName">{name}</h3>
-=======
         <div className="restaurantCard" onClick={onOpen}>
           <h2>{name}</h2>
           <img className="listImage" src={img}/>
@@ -49,8 +41,9 @@ class RestaurantListItem extends React.Component {
         <Modal open={open} onClose={onClose}>
                 <img className="modalImage" src={img} />
                 <h1>{name}</h1>
->>>>>>> e35d772d81f61ed6397cc35a20832d54a9397772
                 <p>{address}</p>
+                <SaveRestaurant restaurant={this.props.restaurant}/>
+                
         </Modal>
         </React.Fragment>
     )
