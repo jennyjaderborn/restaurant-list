@@ -8,7 +8,7 @@ import Modal from 'react-responsive-modal';
 import PropTypes from 'prop-types';
 import Save from './Save';
 
-const minArray = [];
+
 
 class RestaurantListItem extends React.Component {
 
@@ -17,17 +17,22 @@ class RestaurantListItem extends React.Component {
 
   this.state = {
     open: false,
-    saved: false,
   }
 
   this.saveRestaurant = (props) => {
     alert('spara')
-    //console.log('PROPS:', this.props.restaurant)
-    this.setState( state => ({
-      saved: !state.saved,
-    }))
-    minArray.push(this.props.restaurant);
-    console.log('arrayen::::',minArray);
+if(localStorage.sparadarray === null){
+    let minArray = [];
+    localStorage.setItem("sparadarray", JSON.stringify(minArray)); 
+    
+}
+    
+    let ParsedArray = JSON.parse(localStorage.getItem("sparadarray"));
+    ParsedArray.push(this.props.restaurant);
+    localStorage.setItem("sparadarray", JSON.stringify(ParsedArray));
+    console.log('arrayen::::',ParsedArray);
+    
+
   }
   
 
@@ -44,22 +49,6 @@ onCloseModal = () => {
   this.setState({
     open: false
   })
-}
-
-
-
-componentWillMount(minArray) {
-  localStorage.getItem("sparadarray");
-//alert(localStorage.getItem("sparadarray"));
-  /*localStorage.getItem('save') && this.setState({
-    saved: JSON.parse(localStorage.getItem('save')),
-    isLoading: false
-  })*/
-}
-
-componentWillUpdate(minArray) {
-  localStorage.setItem("sparadarray", minArray);
-  //localStorage.setItem('save', JSON.stringify(nextState.saved))
 }
 
 
