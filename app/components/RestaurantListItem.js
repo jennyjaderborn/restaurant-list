@@ -10,7 +10,9 @@ import Save from './Save';
 
 
 
+
 class RestaurantListItem extends React.Component {
+
 
   constructor(props){
     super(props)
@@ -20,19 +22,21 @@ class RestaurantListItem extends React.Component {
   }
 
   this.saveRestaurant = (props) => {
+    console.log('props!!!', this.props.restaurant);
     alert('spara')
-if(localStorage.sparadarray === null){
-    let minArray = [];
-    localStorage.setItem("sparadarray", JSON.stringify(minArray)); 
-    
-}
-    
-    let ParsedArray = JSON.parse(localStorage.getItem("sparadarray"));
-    ParsedArray.push(this.props.restaurant);
-    localStorage.setItem("sparadarray", JSON.stringify(ParsedArray));
-    console.log('arrayen::::',ParsedArray);
-    
 
+    if(localStorage.sparadarray === null){
+      let minArray = [];
+      localStorage.setItem("sparadarray", JSON.stringify(minArray)); 
+      
+    
+    }
+
+    let ParsedArray = JSON.parse(localStorage.getItem("sparadarray"));
+    console.log('innan push', ParsedArray)
+   ParsedArray.push(this.props.restaurant);
+   localStorage.setItem("sparadarray", JSON.stringify(ParsedArray));
+   console.log('arrayen::::',ParsedArray);
   }
   
 
