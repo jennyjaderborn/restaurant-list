@@ -25,11 +25,11 @@ class RestaurantListItem extends React.Component {
     console.log('props!!!', this.props.restaurant);
     alert('spara')
 
-    if(localStorage.sparadarray === null){
+    if(!localStorage.sparadarray){
       let minArray = [];
       localStorage.setItem("sparadarray", JSON.stringify(minArray)); 
       
-    
+
     }
 
     let ParsedArray = JSON.parse(localStorage.getItem("sparadarray"));
