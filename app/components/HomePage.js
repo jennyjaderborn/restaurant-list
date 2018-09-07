@@ -5,6 +5,7 @@
  */
 
 import React from "react";
+import SavedRestaurants from './SavedRestaurants'
 
 
 
@@ -13,7 +14,8 @@ class HomePage extends React.Component {
   render() {
     return (
       <div className="homePage">
-        <h1>homepage</h1>
+        <h1>Dina favorit restauranger</h1>
+        <SavedRestaurants />
       </div>
     );
     
