@@ -23,20 +23,20 @@ class RestaurantList extends React.Component {
     }
 
 
-  onOpenModal = (id) => {
-    console.log('this is the selected id', id)
-    this.setState({
-      open: true,
-      selected: id
-    })
-  }
+    onOpenModal = (id) => {
+      console.log('this is the selected id', id)
+      this.setState({
+        open: true,
+        selected: id
+      })
+    }
 
-  onCloseModal = () => {
-    this.setState({
-      open: false,
-      selected: -1
-    })
-  }
+    onCloseModal = () => {
+      this.setState({
+        open: false,
+        selected: -1
+      })
+    }
 
 
     eachRestaurant = (restaurant) => {
@@ -54,23 +54,23 @@ class RestaurantList extends React.Component {
     }
 
 
-  render() {
-      return (
-        <div className="restaurantListWrap">
+      render() {
+          return (
+            <div className="restaurantListWrap">
 
-          {/*Loops through the data-array using map(). We are returning <RestaurantListItem/> for each item in eachRestaurant().*/}
-          {this.props.restaurants.map((restaurant) => this.eachRestaurant(restaurant))}
+              {/*Loops through the data-array using map(). We are returning <RestaurantListItem/> for each item in eachRestaurant().*/}
+              {this.props.restaurants.map((restaurant) => this.eachRestaurant(restaurant))}
+              
+            </div>
+          )
           
-        </div>
-      )
-      
-    }
+        }
   }
 
 
-RestaurantList.propTypes = {
+  RestaurantList.propTypes = {
 
-  restaurants: PropTypes.array.isRequired
-};
+    restaurants: PropTypes.array.isRequired
+  };
 
 export default RestaurantList;

@@ -24,15 +24,15 @@ class RestaurantListItem extends React.Component {
 
     /* saves restaurant in localstorage with an array*/
     saveRestaurant = (props) => {
-      if(!localStorage.sparadarray){
-        let minArray = [];
-        localStorage.setItem("sparadarray", JSON.stringify(minArray)); 
+      if(!localStorage.savedArray){
+        let restaurantArray = [];
+        localStorage.setItem("savedArray", JSON.stringify(restaurantArray)); 
         
       }
   
-      let ParsedArray = JSON.parse(localStorage.getItem("sparadarray"));
+      let ParsedArray = JSON.parse(localStorage.getItem("savedArray"));
         ParsedArray.push(this.props.restaurant);
-        localStorage.setItem("sparadarray", JSON.stringify(ParsedArray));
+        localStorage.setItem("savedArray", JSON.stringify(ParsedArray));
         console.log('sparad array: ',ParsedArray);
     }
     

@@ -1,25 +1,26 @@
 import React from 'react';
 
-const SavedRestaurants = (props) => {
+    const SavedRestaurants = (props) => {
 
-if(localStorage.sparadarray){
-let visaArray = JSON.parse(localStorage.getItem("sparadarray"));    
-console.log('sparade', visaArray);
+        if(localStorage.savedArray){
+        let showRestaurants = JSON.parse(localStorage.getItem("savedArray"));    
+        console.log('sparade', showRestaurants);
 
 
-const restaurantItems = visaArray.map((item,i) => {
-return (
-    <div key={i}>
-<p>{item.name}</p>
-<img src={item.img}/>
-</div>
-);
-    })
-return(
-    <div>{restaurantItems}</div>
-)} else {
-    return <div>inga sparade</div>
-}
+        const restaurantItems = showRestaurants.map((item,i) => {
+        return (
+            <div key={i}>
+        <p>{item.name}</p>
+        <img src={item.img}/>
+        </div>
+        );
+            })
+        return (
+            <div>{restaurantItems}</div>
+        )
+        } else {
+            return <div>inga sparade</div>
+        }
 
 }
 
