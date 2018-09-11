@@ -16,6 +16,7 @@ class RestaurantListItem extends React.Component {
   constructor(props){
     super(props)
 
+  
     this.renderRestaurantDetails = this.renderRestaurantDetails.bind(this)
     this.renderRestaurant = this.renderRestaurant.bind(this)
     this.saveRestaurant = this.saveRestaurant.bind(this)
@@ -53,24 +54,23 @@ class RestaurantListItem extends React.Component {
       }
 
 
-      renderRestaurantDetails = (id) => {
-        console.log('ID', id) // onOpenModal() pass the id through props as selectedId.
+      renderRestaurantDetails = () => {
+       // console.log('ID') // onOpenModal() pass the id through props as selectedId.
 
-        if(id === this.props.restaurant.id){
+        //if(id === this.props.restaurant.id){
 
           console.log('matching restaurant: ', this.props.restaurant)
         
             const { img, name, address } = this.props.restaurant;
-            const { open } = this.props;
     
           return (
-              <React.Fragment>
+             <React.Fragment>
                 <div className="restaurantCard">
                   <h2>{name}</h2>
                   <img className="listImage" src={img}/>
                 </div>
 
-                <Modal open={open} onClose={this.props.handleClose}>
+                <Modal open={true} onClose={this.props.handleClose}>
                         <img className="modalImage" src={img} />
                         <h1>{name}</h1>
                         <p>{address}</p>
@@ -80,13 +80,11 @@ class RestaurantListItem extends React.Component {
                 </Modal>
               </React.Fragment>
         )
-      } else {
-        return null;
-        }
+
       }
 
       render(id) {
-        return this.props.open ? this.renderRestaurantDetails(this.props.selectedId) : this.renderRestaurant()
+        return this.props.selectedId === this.props.restaurant.id ? this.renderRestaurantDetails() : this.renderRestaurant()
       }
     }
     

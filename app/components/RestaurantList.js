@@ -26,14 +26,12 @@ class RestaurantList extends React.Component {
     onOpenModal = (id) => {
       console.log('this is the selected id', id)
       this.setState({
-        open: true,
         selected: id
       })
     }
 
     onCloseModal = () => {
       this.setState({
-        open: false,
         selected: -1
       })
     }
@@ -45,7 +43,6 @@ class RestaurantList extends React.Component {
                       restaurant={restaurant}
                       key={restaurant.id}
                       id={restaurant.id}
-                      open={this.state.open}
                       selectedId={this.state.selected}
                       handleClick={this.onOpenModal}
                       handleClose={this.onCloseModal}
