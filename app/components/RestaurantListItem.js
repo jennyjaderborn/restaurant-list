@@ -37,8 +37,6 @@ class RestaurantListItem extends React.Component {
     }
     
 
-
-
     renderRestaurant = (props) => {
         const { name, img } = this.props.restaurant;    
         const { id } = this.props;
