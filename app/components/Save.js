@@ -2,7 +2,7 @@ import React from 'react';
 
 const Save = (props) => {
     return (
-    <p value={null} onClick={props.save}>Spara</p>
+    <button value={null} onClick={props.save}>Spara</button>
     )
 }
   export default Save;
