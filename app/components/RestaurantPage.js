@@ -29,7 +29,8 @@ let restaurants = [
         name: 'Bellini',
         address: 'Linnegatan 20',
         img: require('images/spizo.jpg'),
-        id: 0
+        id: 0,
+        category: 'italienskt'
       },
       { 
         name: 'Un Poco',
@@ -42,13 +43,16 @@ let restaurants = [
         name: 'Spizo',
         address: 'Vasagatan 4',
         img: require('images/spizo.jpg'),
-        id: 2
+        id: 2,
+        category: 'libanesiskt' 
+        
       },
       { 
         name: 'Food Corner',
         address: 'Vasagatan 4',
         img: require('images/unpoco.jpg'),
-        id: 3
+        id: 3,
+        category: 'spanskt'         
       },
       { 
         name: 'Un Poco',
@@ -62,13 +66,15 @@ let restaurants = [
         name: 'Un Poco',
         address: 'Vasagatan 4',
         img: require('images/unpoco.jpg'),
-        id: 5
+        id: 5,
+        category: 'italienskt'        
       },
       { 
         name: 'Un Poco',
         address: 'Vasagatan 4',
         img: require('images/unpoco.jpg'),
-        id: 6
+        id: 6,
+        category: 'italienskt'        
       },
       { 
         name: 'Un Pocosist',
