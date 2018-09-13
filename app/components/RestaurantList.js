@@ -37,7 +37,6 @@ class RestaurantList extends React.Component {
 
 
     eachRestaurant = (restaurant) => {
-      {console.log('restaurangen', restaurant)}
       return (
       <RestaurantListItem 
                       restaurant={restaurant}
@@ -54,7 +53,6 @@ class RestaurantList extends React.Component {
       render() {
           return (
             <React.Fragment>
-              {console.log('kategorin i restaurantlist', this.props.cat)}
               <CategoryNavbar/>
 
             <div className="restaurantListWrap">
