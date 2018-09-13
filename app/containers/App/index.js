@@ -37,6 +37,25 @@ export default function App() {
           return (<RestaurantPage/>);
         }
       }/>
+
+      <Route path="/restauranger/libanesiskt" exact strict render={
+        ()=> {
+          return (<RestaurantPage/>);
+        }
+      }/>
+
+      <Route path="/restauranger/spanskt" exact strict render={
+        ()=> {
+          return (<RestaurantPage/>);
+        }
+      }/>
+
+      <Route path="/restauranger/italienskt" exact strict render={
+        ()=> {
+          return (<RestaurantPage/>);
+        }
+      }/>
+
       </React.Fragment>
   </Router>
     

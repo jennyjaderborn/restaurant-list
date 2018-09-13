@@ -10,7 +10,7 @@ import React from 'react';
         const restaurantItems = showRestaurants.map((item,i) => {
         return (
             <div key={i}>
-        <p>{item.name}</p>
+        <p>{item.name} och id: {item.id}</p>
         <img src={item.img}/>
         </div>
         );

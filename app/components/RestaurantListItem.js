@@ -7,6 +7,8 @@ import React from "react";
 import Modal from 'react-responsive-modal';
 import PropTypes from 'prop-types';
 import Save from './Save';
+import Review from './Review';
+import Reviews from './Reviews'
 
 
 
@@ -14,14 +16,15 @@ import Save from './Save';
 class RestaurantListItem extends React.Component {
 
   constructor(props){
-    super(props)
-
+    super(props) 
   
     this.renderRestaurantDetails = this.renderRestaurantDetails.bind(this)
     this.renderRestaurant = this.renderRestaurant.bind(this)
     this.saveRestaurant = this.saveRestaurant.bind(this)
 
     }
+
+   
 
     /* saves restaurant in localstorage with an array*/
     saveRestaurant = (props) => {
@@ -75,13 +78,15 @@ class RestaurantListItem extends React.Component {
                           <Save
                               save={this.saveRestaurant}
                           />
+                          <Review />                           
+                          
                 </Modal>
               </React.Fragment>
         )
 
       }
 
-      render(id) {
+      render() {
         return this.props.selectedId === this.props.restaurant.id ? this.renderRestaurantDetails() : this.renderRestaurant()
       }
     }
