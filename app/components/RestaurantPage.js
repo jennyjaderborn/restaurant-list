@@ -37,14 +37,14 @@ let restaurants = [
         category: 'italienskt'
       },
       { 
-        name: 'Un Poco',
+        name: 'Un Poco L',
         address: 'Vasagatan 4',
         img: require('images/unpoco.jpg'),
         id: 1,
         category: 'libanesiskt' 
       },
       { 
-        name: 'Spizo',
+        name: 'Spizo L',
         address: 'Vasagatan 4',
         img: require('images/spizo.jpg'),
         id: 2,
@@ -59,7 +59,7 @@ let restaurants = [
         category: 'spanskt'         
       },
       { 
-        name: 'Un Poco',
+        name: 'Un Poco L',
         address: 'Vasagatan 4',
         img: require('images/unpoco.jpg'),
         id: 4,
@@ -81,7 +81,7 @@ let restaurants = [
         category: 'italienskt'        
       },
       { 
-        name: 'Un Pocosist',
+        name: 'Un Pocosist L',
         address: 'Vasagatan 4',
         img: require('images/unpoco.jpg'),
         id: 7,
@@ -105,15 +105,17 @@ function SubCats () {
 }
 
 class RestaurantPage extends React.Component {
-
+  constructor(props){
+    super(props)
+    console.log('params:', this.props.cat);
+    
+  }
   
-   
-  render() {
-
+  render() {    
     return (
       <div className="restaurantPage">
-        <h2>Restauranger</h2>
-        <RestaurantList categories={categories} restaurants={restaurants}/>
+        {this.props.cat ? <h2>{this.props.cat}</h2> : <h2>Restauranger</h2>}
+        <RestaurantList cat={this.props.cat} categories={categories} restaurants={restaurants}/>
       </div>
     );
     

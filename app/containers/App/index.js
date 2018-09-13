@@ -19,6 +19,20 @@ import NavBar from 'components/NavBar';
 import SubCats from 'components/RestaurantPage';
 import { BrowserRouter as Router, Link, NavLink, Redirect, Prompt } from 'react-router-dom';
 
+const Cat = (params) => {
+  console.log(params.cat)
+return (
+  <div>
+<h1>Welcome {params.cat} </h1>
+<h1>Welcome {params.cat} </h1>
+
+<h1>Welcome {params.cat} </h1>
+
+
+</div>
+);
+  }
+
 export default function App() {
   return (
 
@@ -35,11 +49,17 @@ export default function App() {
 
       <Route path="/restauranger" exact strict render={
         ()=> {
+          console.log('return restaurangpage 1')
+
           return (<RestaurantPage/>);
         }
       }/>
 
-      <Route path="/restauranger/libanesiskt" exact strict render={
+      <Route path="/restauranger/:cat" exact strict render={({match})=>(
+           <RestaurantPage cat={match.params.cat}/>
+        )}/>
+
+      {/*<Route path="/restauranger/libanesiskt" exact strict render={
         ()=> {
           return (<RestaurantPage/>);
         }
@@ -55,7 +75,7 @@ export default function App() {
         ()=> {
           return (<RestaurantPage/>);
         }
-      }/>
+      }/>*/}
 
       <Route path={`/restaurants/:category/`} component={SubCats} />
 
