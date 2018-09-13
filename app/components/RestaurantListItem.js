@@ -7,19 +7,18 @@ import React from "react";
 import Modal from 'react-responsive-modal';
 import PropTypes from 'prop-types';
 import Save from './Save';
-
-
+import ReviewList from './ReviewList'
 
 
 class RestaurantListItem extends React.Component {
 
   constructor(props){
     super(props)
-
-  
+   
     this.renderRestaurantDetails = this.renderRestaurantDetails.bind(this)
     this.renderRestaurant = this.renderRestaurant.bind(this)
     this.saveRestaurant = this.saveRestaurant.bind(this)
+  
 
     }
 
@@ -44,8 +43,9 @@ class RestaurantListItem extends React.Component {
 
         return (
           <div className="restaurantCard" onClick={() => this.props.handleClick(id)}>
-              <h2>{name}</h2>
+              
               <img className="listImage" src={img}/>
+              <h3>{name}</h3>
               
           </div>
         )
@@ -70,19 +70,33 @@ class RestaurantListItem extends React.Component {
 
                 <Modal open={true} onClose={this.props.handleClose}>
                         <img className="modalImage" src={img} />
-                        <h1>{name}</h1>
+                        <div className="infoWrapper">
+                          <div className="boxOne">
+                        <h2>{name}</h2>
                         <p>{address}</p>
+                        </div>
+                        <div className="boxTwo">
                           <Save
                               save={this.saveRestaurant}
                           />
+
+                          </div>
+
+                        
+                        
+                  </div>  
+                  <ReviewList />
                 </Modal>
               </React.Fragment>
-        )
+
+            
+        )  
 
       }
 
       render(id) {
         return this.props.selectedId === this.props.restaurant.id ? this.renderRestaurantDetails() : this.renderRestaurant()
+
       }
     }
     

@@ -14,7 +14,7 @@ let restaurants = [
       { 
         name: 'Bellini',
         address: 'Linnegatan 20',
-        img: require('images/images.jpg'),
+        img: require('images/spizo.jpg'),
         id: 0
       },
       { 
@@ -24,13 +24,13 @@ let restaurants = [
         id: 1
       },
       { 
-        name: 'Un Poco',
+        name: 'Spizo',
         address: 'Vasagatan 4',
-        img: require('images/unpoco.jpg'),
+        img: require('images/spizo.jpg'),
         id: 2
       },
       { 
-        name: 'Un Poco',
+        name: 'Food Corner',
         address: 'Vasagatan 4',
         img: require('images/unpoco.jpg'),
         id: 3

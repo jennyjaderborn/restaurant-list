@@ -14,7 +14,8 @@ import React from 'react';
         <img src={item.img}/>
         </div>
         );
-            })
+
+    })
         return (
             <div>{restaurantItems}</div>
         )
