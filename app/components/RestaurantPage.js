@@ -8,6 +8,20 @@ import React from "react";
 import RestaurantList from './RestaurantList';
 import PropTypes from 'prop-types';
 
+let categories = [
+  {
+    category: 'italienskt'
+  },
+  {
+    category: 'libanesiskt'
+  },
+  {
+    category: 'spanskt'
+  },
+  {
+    category: 'alla'
+  }
+]
 
 let restaurants = [
 
@@ -21,7 +35,8 @@ let restaurants = [
         name: 'Un Poco',
         address: 'Vasagatan 4',
         img: require('images/unpoco.jpg'),
-        id: 1
+        id: 1,
+        category: 'libanesiskt' 
       },
       { 
         name: 'Spizo',
@@ -39,7 +54,9 @@ let restaurants = [
         name: 'Un Poco',
         address: 'Vasagatan 4',
         img: require('images/unpoco.jpg'),
-        id: 4
+        id: 4,
+        category: 'libanesiskt'
+        
       },
       { 
         name: 'Un Poco',
@@ -57,7 +74,8 @@ let restaurants = [
         name: 'Un Pocosist',
         address: 'Vasagatan 4',
         img: require('images/unpoco.jpg'),
-        id: 7
+        id: 7,
+        category: 'libanesiskt'        
       }
 ];
 
@@ -68,7 +86,7 @@ class RestaurantPage extends React.Component {
     return (
       <div className="restaurantPage">
         <h2>Restauranger</h2>
-        <RestaurantList restaurants={restaurants}/>
+        <RestaurantList categories={categories} restaurants={restaurants}/>
       </div>
     );
     
