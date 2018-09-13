@@ -7,7 +7,7 @@
 import React from "react";
 import RestaurantListItem from './RestaurantListItem';
 import PropTypes from 'prop-types';
-import CategoryItem from './CategoryItem';
+import CategoryNavbar from './CategoryNavbar';
 
 class RestaurantList extends React.Component {  
   constructor(props) {
@@ -20,7 +20,6 @@ class RestaurantList extends React.Component {
       this.onOpenModal = this.onOpenModal.bind(this)
       this.eachRestaurant = this.eachRestaurant.bind(this)
       this.onCloseModal = this.onCloseModal.bind(this)
-      this.filterCategories = this.filterCategories.bind(this)
     }
 
     onOpenModal = (id) => {
@@ -36,22 +35,9 @@ class RestaurantList extends React.Component {
       })
     }
 
-    filterCategories = (category) => {
-      this.setState({
-        selectedCat: category
-      })
-      console.log('this category was choosen', category)
-    }
-
-    eachCategory = (category) => {
-      return <CategoryItem 
-                  category={category}
-                  filterCategories={this.filterCategories}
-                />
-    }
-
 
     eachRestaurant = (restaurant) => {
+      {console.log('restaurangen', restaurant)}
       return (
       <RestaurantListItem 
                       restaurant={restaurant}
@@ -68,15 +54,18 @@ class RestaurantList extends React.Component {
       render() {
           return (
             <React.Fragment>
-              <div className="categories">
-                {this.props.categories.map((category) => this.eachCategory(category))}
-              </div>
-           
+              {console.log('kategorin i restaurantlist', this.props.cat)}
+              <CategoryNavbar/>
+
             <div className="restaurantListWrap">
-              {console.log('kategorier ', this.props.categories)}
-              {this.state.selectedCat === 'alla' ? this.props.restaurants.map((restaurant) => this.eachRestaurant(restaurant)) : null}
+
+              {/*console.log('kategorier ', this.props.categories)*/}
+              {/*this.state.selectedCat === 'alla' ? this.props.restaurants.map((restaurant) => this.eachRestaurant(restaurant)) : null}
               {/*Loops through the data-array using map(). We are returning <RestaurantListItem/> for each item in eachRestaurant().*/}
-              {this.props.restaurants.filter(restaurant => restaurant.category === this.state.selectedCat).map((restaurant) => this.eachRestaurant(restaurant))}
+
+              {this.props.cat === undefined ? 
+              this.props.restaurants.map((restaurant) => this.eachRestaurant(restaurant)) 
+              : this.props.restaurants.filter(restaurant => restaurant.category === this.props.cat).map((restaurant) => this.eachRestaurant(restaurant))}
               
             </div>
             </React.Fragment>
