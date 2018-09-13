@@ -16,6 +16,7 @@ import { Switch, Route } from 'react-router-dom';
 import HomePage from 'components/HomePage';
 import RestaurantPage from 'components/RestaurantPage';
 import NavBar from 'components/NavBar';
+import SubCats from 'components/RestaurantPage';
 import { BrowserRouter as Router, Link, NavLink, Redirect, Prompt } from 'react-router-dom';
 
 export default function App() {
@@ -55,6 +56,8 @@ export default function App() {
           return (<RestaurantPage/>);
         }
       }/>
+
+      <Route path={`/restaurants/:category/`} component={SubCats} />
 
       </React.Fragment>
   </Router>

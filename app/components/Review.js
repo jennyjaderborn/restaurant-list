@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Reviews from './Reviews';
+import ReviewForm from './ReviewForm';
 
 
 
@@ -43,6 +44,7 @@ class Review extends Component {
         <div>
             <button onClick={this.showReviews}>More reviews</button>
             <Reviews reviews={reviews} show={this.state.showComponent} />
+            <ReviewForm />
             </div>
         )
     }

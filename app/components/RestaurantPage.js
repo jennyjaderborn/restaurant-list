@@ -10,16 +10,20 @@ import PropTypes from 'prop-types';
 
 let categories = [
   {
-    category: 'italienskt'
+    category: 'italienskt',
+    id: 0,
   },
   {
-    category: 'libanesiskt'
+    category: 'libanesiskt',
+    id: 1
   },
   {
-    category: 'spanskt'
+    category: 'spanskt',
+    id: 2
   },
   {
-    category: 'alla'
+    category: 'alla',
+    id: 3
   }
 ]
 
@@ -85,7 +89,24 @@ let restaurants = [
       }
 ];
 
+function SubCats () {
+  return (
+    <div>
+        <h2>Topics</h2>
+        <ul>
+          {categories.map(({category, id}) => (
+            <li key={id}>
+              <Link to={`/restaurants/${id}`}>{category}</Link>
+            </li>
+          ))}
+        </ul>
+    </div>
+  )
+}
+
 class RestaurantPage extends React.Component {
+
+  
    
   render() {
 
