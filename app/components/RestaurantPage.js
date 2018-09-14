@@ -89,20 +89,7 @@ let restaurants = [
       }
 ];
 
-function SubCats () {
-  return (
-    <div>
-        <h2>Topics</h2>
-        <ul>
-          {categories.map(({category, id}) => (
-            <li key={id}>
-              <Link to={`/restaurants/${id}`}>{category}</Link>
-            </li>
-          ))}
-        </ul>
-    </div>
-  )
-}
+
 
 class RestaurantPage extends React.Component {
   constructor(props){

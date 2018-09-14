@@ -43,6 +43,7 @@ class RestaurantListItem extends React.Component {
     this.saveRestaurant = this.saveRestaurant.bind(this)
     this.saveReview = this.saveReview.bind(this)
     this.renderReviewForm = this.renderReviewForm.bind(this)
+    this.showReviews = this.showReviews.bind(this)
   
 
     }
