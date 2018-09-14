@@ -56,8 +56,7 @@ class RestaurantList extends React.Component {
 
             <div className="restaurantListWrap">
 
-              {/*console.log('kategorier ', this.props.categories)*/}
-              {/*this.state.selectedCat === 'alla' ? this.props.restaurants.map((restaurant) => this.eachRestaurant(restaurant)) : null}
+             
               {/*Loops through the data-array using map(). We are returning <RestaurantListItem/> for each item in eachRestaurant().*/}
 
               {this.props.cat === undefined ? 
