@@ -36,8 +36,6 @@ class RestaurantListItem extends React.Component {
                 review: 'Helt ok.'
               }
         ],
-
-      savedValue: -1
     }
   
     this.renderRestaurantDetails = this.renderRestaurantDetails.bind(this)
@@ -69,7 +67,8 @@ class RestaurantListItem extends React.Component {
         }))
 
         this.setState({
-          showForm : !this.state.showForm
+          showForm : !this.state.showForm,
+          showComponent: true
         })
     }
 
@@ -136,7 +135,7 @@ class RestaurantListItem extends React.Component {
                           /> 
                           </div>   
                           </div>
-                          <button onClick={this.showReviews}>More reviews</button>
+                          <button onClick={this.showReviews}>Visa recenssioner</button>
                           <button onClick={this.renderReviewForm}>Skriv recenssion</button>
                           {this.state.showComponent ? <Reviews reviews={this.state.reviews}/> : null}
                         {this.state.showForm ? <ReviewForm save={this.saveReview}/> : null}     
