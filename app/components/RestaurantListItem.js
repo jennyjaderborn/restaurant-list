@@ -6,9 +6,10 @@
 import React from "react";
 import Modal from 'react-responsive-modal';
 import PropTypes from 'prop-types';
-import Save from './Save';
+/*import Save from './Save';*/
 import Reviews from './Reviews'
 import ReviewForm from './ReviewForm'
+import SaveRestaurant from './SaveRestaurant'
 
 
 
@@ -40,7 +41,7 @@ class RestaurantListItem extends React.Component {
   
     this.renderRestaurantDetails = this.renderRestaurantDetails.bind(this)
     this.renderRestaurant = this.renderRestaurant.bind(this)
-    this.saveRestaurant = this.saveRestaurant.bind(this)
+    //this.saveRestaurant = this.saveRestaurant.bind(this)
     this.saveReview = this.saveReview.bind(this)
     this.renderReviewForm = this.renderReviewForm.bind(this)
     this.showReviews = this.showReviews.bind(this)
@@ -78,21 +79,7 @@ class RestaurantListItem extends React.Component {
         showForm : !this.state.showForm
       })
     }
-
-    /* saves restaurant in localstorage with an array*/
-    saveRestaurant = (props) => {
-      if(!localStorage.savedArray){
-        let restaurantArray = [];
-        localStorage.setItem("savedArray", JSON.stringify(restaurantArray)); 
-        
-      }
   
-      let ParsedArray = JSON.parse(localStorage.getItem("savedArray"));
-        ParsedArray.push(this.props.restaurant);
-        localStorage.setItem("savedArray", JSON.stringify(ParsedArray));
-        console.log('sparad array: ',ParsedArray);
-    }
-    
 
     renderRestaurant = (props) => {
         const { name, img } = this.props.restaurant;    
@@ -124,22 +111,25 @@ class RestaurantListItem extends React.Component {
                 </div>
 
                 <Modal open={true} onClose={this.props.handleClose}>
-                        <img className="modalImage" src={img} />
-                        <div className="infoWrapper">
-                          <div className="boxOne">
+                  <img className="modalImage" src={img} />
+                  <div className="infoWrapper">
+
+                      <div className="boxOne">
                         <h2>{name}</h2>
                         <p>{address}</p>
-                        </div>
-                        <div className="boxTwo">
-                          <Save
-                              save={this.saveRestaurant}
-                          /> 
-                          </div>   
-                          </div>
-                          <button onClick={this.showReviews}>Visa recenssioner</button>
-                          <button onClick={this.renderReviewForm}>Skriv recenssion</button>
-                          {this.state.showComponent ? <Reviews reviews={this.state.reviews}/> : null}
-                        {this.state.showForm ? <ReviewForm save={this.saveReview}/> : null}     
+                      </div>
+
+                      <div className="boxTwo">
+                        <SaveRestaurant restaurantToSave={this.props.restaurant} />
+                      </div>
+                      
+                  </div>
+
+                  <button onClick={this.showReviews}>Visa recenssioner</button>
+                  <button onClick={this.renderReviewForm}>Skriv recenssion</button>
+
+                  {this.state.showComponent ? <Reviews reviews={this.state.reviews}/> : null}
+                  {this.state.showForm ? <ReviewForm save={this.saveReview}/> : null}     
                                          
                           
                 </Modal>

@@ -5,4 +5,5 @@ const Save = (props) => {
     <button value={null} onClick={props.save}><div className="heart"><p>Spara</p></div></button>
     )
 }
+
   export default Save;

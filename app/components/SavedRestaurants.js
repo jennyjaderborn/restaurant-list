@@ -1,6 +1,7 @@
 import React from 'react';
 
     const SavedRestaurants = (props) => {
+        
 
         if(localStorage.savedArray){
         let showRestaurants = JSON.parse(localStorage.getItem("savedArray"));    
