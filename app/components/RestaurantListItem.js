@@ -6,7 +6,6 @@
 import React from "react";
 import Modal from 'react-responsive-modal';
 import PropTypes from 'prop-types';
-/*import Save from './Save';*/
 import Reviews from './Reviews'
 import ReviewForm from './ReviewForm'
 import SaveRestaurant from './SaveRestaurant'
@@ -122,7 +121,7 @@ class RestaurantListItem extends React.Component {
                       <div className="boxTwo">
                         <SaveRestaurant restaurantToSave={this.props.restaurant} />
                       </div>
-                      
+
                   </div>
 
                   <button onClick={this.showReviews}>Visa recenssioner</button>
@@ -145,7 +144,6 @@ class RestaurantListItem extends React.Component {
 
       }
     }
-    
 
     RestaurantListItem.propTypes = {
       restaurant: PropTypes.shape({
