@@ -16,7 +16,7 @@ class Reviews extends Component {
         )
     }
     render(){
-     return this.props.show ? this.renderReviews() : null
+     return this.renderReviews()
     
 }
 }

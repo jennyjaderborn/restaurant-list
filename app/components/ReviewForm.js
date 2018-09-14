@@ -1,7 +1,25 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-const ReviewForm = () => {
-    return <p>HEJ REVIEWFORM</p>
+class ReviewForm extends Component {
+constructor(props){
+    super(props)
 }
 
-export default ReviewForm
+    save = (e) => {
+        e.preventDefault()
+		this.props.save(this._newText.value)
+    }
+    render(){
+    return(
+    <div>
+    <form onSubmit={this.save}>
+        <textarea 
+        ref={(input) => this._newText = input}/>
+        <button id="save">Spara</button>
+    </form>
+    </div>
+    )
+}
+}
+
+export default ReviewForm;

@@ -7,8 +7,8 @@ import React from "react";
 import Modal from 'react-responsive-modal';
 import PropTypes from 'prop-types';
 import Save from './Save';
-import Review from './Review';
 import Reviews from './Reviews'
+import ReviewForm from './ReviewForm'
 
 
 
@@ -17,15 +17,67 @@ class RestaurantListItem extends React.Component {
 
   constructor(props){
     super(props) 
+
+    this.state = {
+      showForm : false,
+
+      reviews : [
+        
+              { 
+                name: 'Adam',
+                review: 'God mat och trevlig personal!',
+              },
+              { 
+                name: 'Hannah',
+                review: 'Bra italiensk mat. Fin utsikt.',
+              },
+              { 
+                name: 'John',
+                review: 'Helt ok.'
+              }
+        ],
+
+      savedValue: -1
+    }
   
     this.renderRestaurantDetails = this.renderRestaurantDetails.bind(this)
     this.renderRestaurant = this.renderRestaurant.bind(this)
     this.saveRestaurant = this.saveRestaurant.bind(this)
+    this.saveReview = this.saveReview.bind(this)
+    this.renderReviewForm = this.renderReviewForm.bind(this)
   
 
     }
 
+    showReviews = (props) => {
+      this.setState({
+          showComponent : !this.state.showComponent,
+      })
+  }
+
+    saveReview = (newText) => {
+    console.log('recenssion:' ,newText);  
    
+    this.setState(prevState => ({
+			reviews: [
+				...prevState.reviews,
+				{
+                    name: 'jenny',
+                    review : newText 
+				}
+			]
+        }))
+
+        this.setState({
+          showForm : !this.state.showForm
+        })
+    }
+
+    renderReviewForm = (props) => {
+      this.setState({
+        showForm : !this.state.showForm
+      })
+    }
 
     /* saves restaurant in localstorage with an array*/
     saveRestaurant = (props) => {
@@ -58,9 +110,7 @@ class RestaurantListItem extends React.Component {
 
 
       renderRestaurantDetails = () => {
-       // console.log('ID') // onOpenModal() pass the id through props as selectedId.
-
-        //if(id === this.props.restaurant.id){
+     
 
           console.log('matching restaurant: ', this.props.restaurant)
         
@@ -86,7 +136,10 @@ class RestaurantListItem extends React.Component {
                           /> 
                           </div>   
                           </div>
-                          <Review />        
+                          <button onClick={this.showReviews}>More reviews</button>
+                          <button onClick={this.renderReviewForm}>Skriv recenssion</button>
+                          {this.state.showComponent ? <Reviews reviews={this.state.reviews}/> : null}
+                        {this.state.showForm ? <ReviewForm save={this.saveReview}/> : null}     
                                          
                           
                 </Modal>
