@@ -45,14 +45,14 @@ class ReviewParent extends Component {
         })
     }
 
-    saveReview = (newText) => {
-        console.log('recenssion:' ,newText);  
+    saveReview = (newName,newText) => {
+        console.log('recenssion:' ,newText, newName);  
        
         this.setState(prevState => ({
                 reviews: [
                     ...prevState.reviews,
                     {
-                        name: 'jenny',
+                        name: newName,
                         text : newText 
                     }
                 ]

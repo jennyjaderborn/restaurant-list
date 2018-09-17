@@ -11,8 +11,8 @@ class ReviewForm extends Component {
 
     save = (e) => {
         e.preventDefault()
-            console.log('recenssion:' , this._newText.value);  
-		this.props.saveThis(this._newText.value)
+            console.log('recenssion:' , this._newText.value, this._newName.value);  
+		this.props.saveThis(this._newName.value, this._newText.value)
     }
 
 
@@ -25,6 +25,8 @@ class ReviewForm extends Component {
 
         {this.props.isDisplayed ? (
         <form onSubmit={this.save}>
+
+        <input type="text" placeholder="Namn" ref={(input)=> this._newName = input}/>
             <textarea 
                     ref={(input) => this._newText = input}/>
             <button id="save">Spara</button>
