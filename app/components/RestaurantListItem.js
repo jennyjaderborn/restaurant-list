@@ -6,9 +6,11 @@
 import React from "react";
 import Modal from 'react-responsive-modal';
 import PropTypes from 'prop-types';
-import Reviews from './Reviews'
+//import Reviews from './Reviews'
 import ReviewForm from './ReviewForm'
-import SaveRestaurant from './SaveRestaurant'
+import SaveRestaurant from './SaveRestaurant';
+//import ReviewList from './ReviewList';
+import ReviewParent from './ReviewParent';
 
 
 
@@ -18,7 +20,7 @@ class RestaurantListItem extends React.Component {
   constructor(props){
     super(props) 
 
-    this.state = {
+    /*this.state = {
       showForm : false,
 
       reviews : [
@@ -35,20 +37,20 @@ class RestaurantListItem extends React.Component {
                 name: 'John',
                 review: 'Helt ok.'
               }
-        ],
-    }
+        ]
+    }*/
   
     this.renderRestaurantDetails = this.renderRestaurantDetails.bind(this)
     this.renderRestaurant = this.renderRestaurant.bind(this)
     //this.saveRestaurant = this.saveRestaurant.bind(this)
-    this.saveReview = this.saveReview.bind(this)
-    this.renderReviewForm = this.renderReviewForm.bind(this)
-    this.showReviews = this.showReviews.bind(this)
+    //this.saveReview = this.saveReview.bind(this)
+   // this.renderReviewForm = this.renderReviewForm.bind(this)
+    //his.showReviews = this.showReviews.bind(this)
   
 
     }
 
-    showReviews = (props) => {
+   /* showReviews = (props) => {
       this.setState({
           showComponent : !this.state.showComponent,
       })
@@ -77,7 +79,7 @@ class RestaurantListItem extends React.Component {
       this.setState({
         showForm : !this.state.showForm
       })
-    }
+    }*/
   
 
     renderRestaurant = (props) => {
@@ -124,11 +126,15 @@ class RestaurantListItem extends React.Component {
 
                   </div>
 
-                  <button onClick={this.showReviews}>Visa recenssioner</button>
+                    <ReviewParent />
+                   
+                    
+
+                  {/*<button onClick={this.showReviews}>Visa recenssioner</button>
                   <button onClick={this.renderReviewForm}>Skriv recenssion</button>
 
                   {this.state.showComponent ? <Reviews reviews={this.state.reviews}/> : null}
-                  {this.state.showForm ? <ReviewForm save={this.saveReview}/> : null}     
+                  {this.state.showForm ? <ReviewForm save={this.saveReview}/> : null}*/}     
                                          
                           
                 </Modal>
