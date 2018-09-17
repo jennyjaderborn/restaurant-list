@@ -9,7 +9,7 @@ import React from 'react';
             <button onClick={props.display}>Se recenssioner</button>
             {console.log('nu i reviews här är id', props.id)}
             {props.isDisplayed ? (
-                props.reviews.map((review, i) => 
+                props.reviews.filter(review => review.id === props.id).map((review, i) => 
                                 <div key={i}>
                                     <p>{review.name} : {review.text} </p>
                                 </div>)
