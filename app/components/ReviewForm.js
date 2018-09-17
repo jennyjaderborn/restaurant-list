@@ -12,7 +12,8 @@ class ReviewForm extends Component {
     save = (e) => {
         e.preventDefault()
             console.log('recenssion:' , this._newText.value, this._newName.value);  
-		this.props.saveThis(this._newName.value, this._newText.value)
+        this.props.saveThis(this._newName.value, this._newText.value, this.props.id)
+        console.log('recensionID', this.props.id)
     }
 
 

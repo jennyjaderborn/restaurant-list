@@ -68,7 +68,7 @@ class RestaurantListItem extends React.Component {
 
                   </div>
 
-                    <ReviewParent />
+                    <ReviewParent id={this.props.restaurant.id}/>
                                          
                           
                 </Modal>

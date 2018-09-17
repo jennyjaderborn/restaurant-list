@@ -15,15 +15,18 @@ class ReviewParent extends Component {
             reviews : [
                 {
                     name : "Alice",
-                    text : "Trevlig personal och god mat!"
+                    text : "Trevlig personal och god mat!",
+                    id : 5
                 },
                 {
                     name : "Stefan",
-                    text : "Fin utsikt, bra mat."
+                    text : "Fin utsikt, bra mat.",
+                    id: 2
                 },
                 {
                     name : "Anna",
-                    text : "Mysigt ställe, bästa personalen."
+                    text : "Mysigt ställe, bästa personalen.",
+                    id: 3
                 }
 
             ]
@@ -45,15 +48,16 @@ class ReviewParent extends Component {
         })
     }
 
-    saveReview = (newName,newText) => {
-        console.log('recenssion:' ,newText, newName);  
+    saveReview = (newName,newText, newId) => {
+        console.log('recenssion:' ,newText, newName, newId);  
        
         this.setState(prevState => ({
                 reviews: [
                     ...prevState.reviews,
                     {
                         name: newName,
-                        text : newText 
+                        text : newText,
+                        id : newId 
                     }
                 ]
             }))
@@ -70,13 +74,14 @@ class ReviewParent extends Component {
             <div>
                 {console.log(this.state.displayList)}
 
-                <Reviews 
+                <Reviews    id={this.props.id}
                             reviews={this.state.reviews}
                             isDisplayed={this.state.displayList}
                             display={this.displayReviews} 
                             />
 
                 <ReviewForm 
+                            id={this.props.id}
                             isDisplayed={this.state.displayForm} 
                             display={this.displayForm} 
                             reviews={this.state.reviews} 
