@@ -19,68 +19,10 @@ class RestaurantListItem extends React.Component {
 
   constructor(props){
     super(props) 
-
-    /*this.state = {
-      showForm : false,
-
-      reviews : [
-        
-              { 
-                name: 'Adam',
-                review: 'God mat och trevlig personal!',
-              },
-              { 
-                name: 'Hannah',
-                review: 'Bra italiensk mat. Fin utsikt.',
-              },
-              { 
-                name: 'John',
-                review: 'Helt ok.'
-              }
-        ]
-    }*/
   
     this.renderRestaurantDetails = this.renderRestaurantDetails.bind(this)
     this.renderRestaurant = this.renderRestaurant.bind(this)
-    //this.saveRestaurant = this.saveRestaurant.bind(this)
-    //this.saveReview = this.saveReview.bind(this)
-   // this.renderReviewForm = this.renderReviewForm.bind(this)
-    //his.showReviews = this.showReviews.bind(this)
-  
-
-    }
-
-   /* showReviews = (props) => {
-      this.setState({
-          showComponent : !this.state.showComponent,
-      })
   }
-
-    saveReview = (newText) => {
-    console.log('recenssion:' ,newText);  
-   
-    this.setState(prevState => ({
-			reviews: [
-				...prevState.reviews,
-				{
-                    name: 'jenny',
-                    review : newText 
-				}
-			]
-        }))
-
-        this.setState({
-          showForm : !this.state.showForm,
-          showComponent: true
-        })
-    }
-
-    renderReviewForm = (props) => {
-      this.setState({
-        showForm : !this.state.showForm
-      })
-    }*/
-  
 
     renderRestaurant = (props) => {
         const { name, img } = this.props.restaurant;    
@@ -127,14 +69,6 @@ class RestaurantListItem extends React.Component {
                   </div>
 
                     <ReviewParent />
-                   
-                    
-
-                  {/*<button onClick={this.showReviews}>Visa recenssioner</button>
-                  <button onClick={this.renderReviewForm}>Skriv recenssion</button>
-
-                  {this.state.showComponent ? <Reviews reviews={this.state.reviews}/> : null}
-                  {this.state.showForm ? <ReviewForm save={this.saveReview}/> : null}*/}     
                                          
                           
                 </Modal>
