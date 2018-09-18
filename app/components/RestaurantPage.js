@@ -8,25 +8,6 @@ import React from "react";
 import RestaurantList from './RestaurantList';
 import PropTypes from 'prop-types';
 
-let categories = [
-  {
-    category: 'italienskt',
-    id: 0,
-  },
-  {
-    category: 'libanesiskt',
-    id: 1
-  },
-  {
-    category: 'spanskt',
-    id: 2
-  },
-  {
-    category: 'alla',
-    id: 3
-  }
-]
-
 let restaurants = [
 
       { 
@@ -102,7 +83,7 @@ class RestaurantPage extends React.Component {
     return (
       <div className="restaurantPage">
         {this.props.cat ? <h2>{this.props.cat}</h2> : <h2>Restauranger</h2>}
-        <RestaurantList cat={this.props.cat} categories={categories} restaurants={restaurants}/>
+        <RestaurantList cat={this.props.cat} restaurants={restaurants}/>
       </div>
     );
     

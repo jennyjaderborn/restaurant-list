@@ -16,32 +16,32 @@ class ReviewParent extends Component {
                 {
                     name : "Alice",
                     text : "Trevlig personal och god mat!",
-                    id : 5
+                    id : 0
                 },
                 {
                     name : "Stefan",
                     text : "Fin utsikt, bra mat.",
+                    id: 1
+                },
+                {
+                    name : "Anna",
+                    text : "Mysigt ställe, bästa personalen.",
+                    id: 1
+                },
+                {
+                    name : "Anna",
+                    text : "Mysigt ställe, bästa personalen.",
                     id: 2
                 },
                 {
                     name : "Anna",
                     text : "Mysigt ställe, bästa personalen.",
-                    id: 3
-                },
-                {
-                    name : "Anna",
-                    text : "Mysigt ställe, bästa personalen.",
-                    id: 3
-                },
-                {
-                    name : "Anna",
-                    text : "Mysigt ställe, bästa personalen.",
-                    id: 3
+                    id: 2
                 },
                 {
                     name : "Alice",
                     text : "Trevlig personal och god mat!",
-                    id : 5
+                    id : 4
                 },
                 {
                     name : "Alice",
@@ -60,7 +60,6 @@ class ReviewParent extends Component {
         this.setState({
             displayList : !this.state.displayList
         })
-        console.log('reviewsen:::::' ,this.state.reviews)
         
     }
 
@@ -95,7 +94,6 @@ class ReviewParent extends Component {
     render() {
         return (
             <div>
-                {console.log(this.state.displayList)}
 
                 <Reviews    id={this.props.id}
                             reviews={this.state.reviews}

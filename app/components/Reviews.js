@@ -2,12 +2,10 @@ import React from 'react';
 
 
     const Reviews = (props) => {
-        {console.log('nu i reviews här är id', props.id)}
         
         return(
         <React.Fragment>
             <button onClick={props.display}>Se recenssioner</button>
-            {console.log('nu i reviews här är id', props.id)}
             {props.isDisplayed ? (
                 props.reviews.filter(review => review.id === props.id).map((review, i) => 
                                 <div key={i}>
