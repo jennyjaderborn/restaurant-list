@@ -52,7 +52,6 @@ class RestaurantList extends React.Component {
       render() {
           return (
             <React.Fragment>
-              <CategoryNavbar/>
 
             <div className="restaurantListWrap">
 

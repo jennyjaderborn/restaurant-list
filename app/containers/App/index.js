@@ -49,7 +49,6 @@ export default function App() {
 
       <Route path="/restauranger" exact strict render={
         ()=> {
-          console.log('return restaurangpage 1')
 
           return (<RestaurantPage/>);
         }
