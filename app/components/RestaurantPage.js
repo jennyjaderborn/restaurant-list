@@ -83,8 +83,8 @@ class RestaurantPage extends React.Component {
   render() {    
     return (
       <div className="restaurantPage">
-                      <CategoryNavbar/>
-        {this.props.cat ? <h2>{this.props.cat}</h2> : <h2>Restauranger</h2>}
+        <CategoryNavbar/>
+           {this.props.cat ? <h2>{this.props.cat}</h2> : <h2>Restauranger</h2>}
         <RestaurantList cat={this.props.cat} restaurants={restaurants}/>
       </div>
     );

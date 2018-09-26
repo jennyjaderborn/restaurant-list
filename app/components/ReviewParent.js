@@ -54,6 +54,8 @@ class ReviewParent extends Component {
 
 
         this.displayReviews = this.displayReviews.bind(this)
+        this.displayForm = this.displayForm.bind(this)
+        this.saveReview = this.saveReview.bind(this)
     }
 
     displayReviews = () => {
@@ -70,7 +72,6 @@ class ReviewParent extends Component {
     }
 
     saveReview = (newName,newText, newId) => {
-        console.log('recenssion:' ,newText, newName, newId);  
        
         this.setState(prevState => ({
                 reviews: [
@@ -92,20 +93,24 @@ class ReviewParent extends Component {
         
 
     render() {
+
+        const { reviews, displayList, displayForm} = this.state;
+        const { id } = this.props;
+
         return (
             <div>
 
-                <Reviews    id={this.props.id}
-                            reviews={this.state.reviews}
-                            isDisplayed={this.state.displayList}
+                <Reviews    id={id}
+                            reviews={reviews}
+                            isDisplayed={displayList}
                             display={this.displayReviews} 
                             />
 
                 <ReviewForm 
-                            id={this.props.id}
-                            isDisplayed={this.state.displayForm} 
+                            id={id}
+                            isDisplayed={displayForm} 
                             display={this.displayForm} 
-                            reviews={this.state.reviews} 
+                            reviews={reviews} 
                             saveThis={this.saveReview}
                             />
 

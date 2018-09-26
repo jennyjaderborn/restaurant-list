@@ -23,7 +23,7 @@ class RestaurantList extends React.Component {
     }
 
     onOpenModal = (id) => {
-      console.log('this is the selected id', id)
+      //console.log('this is the selected id', id)
       this.setState({
         selected: id
       })

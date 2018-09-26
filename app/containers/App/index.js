@@ -58,25 +58,6 @@ export default function App() {
            <RestaurantPage cat={match.params.cat}/>
         )}/>
 
-      {/*<Route path="/restauranger/libanesiskt" exact strict render={
-        ()=> {
-          return (<RestaurantPage/>);
-        }
-      }/>
-
-      <Route path="/restauranger/spanskt" exact strict render={
-        ()=> {
-          return (<RestaurantPage/>);
-        }
-      }/>
-
-      <Route path="/restauranger/italienskt" exact strict render={
-        ()=> {
-          return (<RestaurantPage/>);
-        }
-      }/>*/}
-
-      <Route path={`/restaurants/:category/`} component={SubCats} />
 
       </React.Fragment>
   </Router>
